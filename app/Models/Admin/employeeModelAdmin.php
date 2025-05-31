@@ -13,7 +13,7 @@ class employeeModelAdmin extends Model
     protected $table = 'employees';
     protected $fillable = [
         'firstName',
-        'lastName',
+        'lastname',
         'gender',
         'email',
         'phoneNumber',

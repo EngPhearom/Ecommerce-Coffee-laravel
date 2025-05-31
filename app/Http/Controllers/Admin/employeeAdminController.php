@@ -10,44 +10,76 @@ use Illuminate\Support\Facades\DB;
 class employeeAdminController extends Controller
 {
     //
-    public function getAllEmployees(){
-        $data = DB::table('employees')->select('*')->get();
-        return view('Admin.Employee.employee', ['employee' => $data]);
+    public function index()
+    {
+        $module = 'employee';
+        return view('Admin.Employee.employee', ['module' => $module]);
     }
 
-    public function deleteEmpoyee(Request $request){
+    public function getAllEmployees()
+    {
+        $data = DB::table('employees')->select('*')->get();
+        return response()->json($data, 200);
+    }
+
+    public function deleteEmployee(Request $request)
+    {
         $employee_id = $request->id;
         $res = DB::table('employees')->where('id', $employee_id)->delete();
-        return response()->json($res);
+        return response()->json($res, 200);
     }
 
-    public function addEmployeee(Request $request){
-        $employee = new employeeModelAdmin();
-        $employee->firstName = $request->firstName;
-        $employee->lastName = $request->lastName;
-        $employee->gender = $request->gender;
-        $employee->email = $request->email;
-        $employee->phoneNumber = $request->phoneNumber;
-        $employee->position = $request->position;
-        $employee->hireDate = $request->hireDate;
-        $employee->salary = $request->salary;
-        $employee->save();
-        return response()->json($employee);
+    public function addEmployee(Request $request)
+    {
+        $firstName = $request->firstName;
+        $lastName = $request->lastname;
+        $gender = $request->gender;
+        $email = $request->email;
+        $phoneNumber = $request->phoneNumber;
+        $position = $request->position;
+        $hireDate = $request->hireDate;
+        $salary = $request->salary;
+
+        $employee = DB::table('employees')
+            ->insert([
+                [
+                    'firstName' => $firstName,
+                    'lastname' => $lastName,
+                    'gender' => $gender,
+                    'email' => $email,
+                    'phoneNumber' => $phoneNumber,
+                    'position' => $position,
+                    'hireDate' => $hireDate,
+                    'salary' => $salary,
+                ]
+            ]);
+        return response()->json($employee, 200);
     }
 
-    public function updateEmployee(Request $request){
-        $employee = employeeModelAdmin::find($request->id);
-        if($employee){
-            $employee->firstName = $request->firstName;
-            $employee->lastName = $request->lastName;
-            $employee->gender = $request->gender;
-            $employee->email = $request->email;
-            $employee->phoneNumber = $request->phoneNumber;
-            $employee->position = $request->position;
-            $employee->hireDate = $request->hireDate;
-            $employee->salary = $request->salary;
-            $employee->save();
-        }
-        return response()->json($employee);
+    public function editEmployee(Request $request)
+    {
+        $employee_id = $request->id;
+        $firstName = $request->firstName;
+        $lastName = $request->lastname;
+        $gender = $request->gender;
+        $email = $request->email;
+        $phoneNumber = $request->phoneNumber;
+        $position = $request->position;
+        $hireDate = $request->hireDate;
+        $salary = $request->salary;
+
+        $employee = DB::table('employees')
+            ->where('id', $employee_id)
+            ->update([
+                'firstName' => $firstName,
+                'lastname' => $lastName,
+                'gender' => $gender,
+                'email' => $email,
+                'phoneNumber' => $phoneNumber,
+                'position' => $position,
+                'hireDate' => $hireDate,
+                'salary' => $salary,
+            ]);
+        return response()->json($employee, 200);
     }
 }

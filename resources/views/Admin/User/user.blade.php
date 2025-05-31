@@ -29,7 +29,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for = "(item, index) in users_list" key = "users_list.id">
+                                    <tr v-for = "(item, index) in users_list" :key = "users_list.id">
                                         <td>[[ index + 1 ]]</td>
                                         <td>[[ item.userName ]]</td>
                                         <td>[[ item.password ]]</td>

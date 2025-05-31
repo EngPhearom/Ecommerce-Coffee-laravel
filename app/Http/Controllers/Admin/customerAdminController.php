@@ -10,45 +10,68 @@ use Illuminate\Support\Facades\DB;
 
 class customerAdminController extends Controller
 {
-    // public function index(){
-    //     $module = 'customer';
-    //     return view('Admin.Customer.customer', ['module' => $module]);
-    // }
-
-    public function getAllCustomers(){
-        $data = DB::table('customer')->select('*')->get();
-        return view('Admin.Customer.customer', ['customer' => $data]);
+    public function index()
+    {
+        $module = 'customer';
+        return view('Admin.Customer.customer', ['module' => $module]);
     }
 
-    public function deleteCustomer(Request $request){
+    public function getAllCustomers()
+    {
+        $data = DB::table('customer')->select('*')->get();
+        return response()->json($data, 200);
+    }
+
+    public function deleteCustomer(Request $request)
+    {
         $customer_id = $request->id;
         $res = DB::table('customer')->where('id', $customer_id)->delete();
-        return response()->json($res);
+        return response()->json($res, 200);
     }
 
-    public function addCustomer(Request $request){
-        $customer = new AdminCustomerModelAdmin();
-        $customer->user_id = $request->user_id;
-        $customer->firstName = $request->firstName;
-        $customer->lastName = $request->lastName;
-        $customer->gender = $request->gender;
-        $customer->emailAddress = $request->emailAddress;
-        $customer->phoneNumber = $request->phoneNumber;
-        $customer->save();
-        return response()->json($customer);
+    public function addCustomer(Request $request)
+    {
+        $user_id = $request->user_id;
+        $firstName = $request->firstName;
+        $lastName = $request->lastName;
+        $gender = $request->gender;
+        $emailAddress = $request->emailAddress;
+        $phoneNumber = $request->phoneNumber;
+
+        $customer = DB::table('customer')
+            ->insert([
+                [
+                    'user_id' => $user_id,
+                    'firstName' => $firstName,
+                    'lastName' => $lastName,
+                    'gender' => $gender,
+                    'emailAddress' => $emailAddress,
+                    'phoneNumber' => $phoneNumber,
+                ]
+            ]);
+        return response()->json($customer, 200);
     }
 
-    public function updateCustomer(Request $request){
-        $customer = AdminCustomerModelAdmin::find($request->id);
-        if($customer){
-            $customer->user_id = $request->user_id;
-            $customer->firstName = $request->firstName;
-            $customer->lastName = $request->lastName;
-            $customer->gender = $request->gender;
-            $customer->emailAddress = $request->emailAddress;
-            $customer->phoneNumber = $request->phoneNumber;
-            $customer->save();
-        }
-        return response()->json($customer);
+    public function editCustomer(Request $request)
+    {
+        $customer_id = $request->id;
+        $user_id = $request->user_id;
+        $firstName = $request->firstName;
+        $lastName = $request->lastName;
+        $gender = $request->gender;
+        $emailAddress = $request->emailAddress;
+        $phoneNumber = $request->phoneNumber;
+
+        $customer = DB::table('customer')
+            ->where('id', $customer_id)
+            ->update([
+                'user_id' => $user_id,
+                'firstName' => $firstName,
+                'lastName' => $lastName,
+                'gender' => $gender,
+                'emailAddress' => $emailAddress,
+                'phoneNumber' => $phoneNumber,
+            ]);
+        return response()->json($customer, 200);
     }
 }
