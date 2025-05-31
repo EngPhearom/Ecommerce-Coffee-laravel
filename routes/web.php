@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+include "Admin/login.php";
+include "Admin/singup.php";
+include "Admin/dashboad.php";
+include "Admin/user.php";
+include "Admin/customer.php";
+include "Admin/employee.php";
+include "Admin/product.php";
+include "Admin/inventory.php";
