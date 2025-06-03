@@ -13,15 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// User block
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
+// Admin block
 include "Admin/login.php";
-include "Admin/singup.php";
-include "Admin/dashboad.php";
-include "Admin/user.php";
-include "Admin/customer.php";
-include "Admin/employee.php";
-include "Admin/product.php";
-include "Admin/inventory.php";
+Route::middleware('auth')->group(function () {
+    include "Admin/singup.php";
+    include "Admin/dashboad.php";
+    include "Admin/user.php";
+    include "Admin/customer.php";
+    include "Admin/employee.php";
+    include "Admin/product.php";
+    include "Admin/inventory.php";
+});

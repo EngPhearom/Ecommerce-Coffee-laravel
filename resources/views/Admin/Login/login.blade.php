@@ -3,46 +3,44 @@
     {{-- Form Login --}}
     <div class="d-flex align-items-center justify-content-center w-100">
         <div class="row justify-content-center w-100">
-          <div class="col-md-8 col-lg-6 col-xxl-3">
-            <div class="card mb-0">
-              <div class="card-body">
-                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <img src="{{ asset('./assets/images/logos/logo.svg') }}" alt="">
-                </a>
-                <p class="text-center">Your Social Campaigns</p>
-                <form>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between mb-4">
-                    <div class="form-check">
-                      <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
-                      <label class="form-check-label text-dark" for="flexCheckChecked">
-                        Remeber this Device
-                      </label>
+            <div class="col-md-8 col-lg-6 col-xxl-3">
+                <div class="card mb-0">
+                    <div class="card-body">
+                        <h1 class="text-center">Login</h1>
+                        <form action="/do-login" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" name="username">
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input primary" type="checkbox" value=""
+                                        id="flexCheckChecked" checked>
+                                    <label class="form-check-label text-dark" for="flexCheckChecked">
+                                        Remeber this Device
+                                    </label>
+                                </div>
+                                {{-- <a class="text-primary fw-bold" href="javascrip:void(0)">Forgot Password ?</a> --}}
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Login</button>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <p class="fs-3 mb-0 fw-bold">Don't have account?</p>
+                                <a class="text-primary fw-bold ms-2" href="{{ route('singup') }}">Create an
+                                    account</a>
+                            </div>
+                        </form>
                     </div>
-                    {{-- <a class="text-primary fw-bold" href="javascrip:void(0)">Forgot Password ?</a> --}}
-                  </div>
-                  <a href="./index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</a>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <p class="fs-4 mb-0 fw-bold">New to MaterialM?</p>
-                    <a class="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</a>
-                  </div>
-                </form>
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 @endsection
 
 @section('script')
-    <script>
-
-    </script>
+    <script></script>
 @endsection

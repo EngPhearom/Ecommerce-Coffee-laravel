@@ -189,7 +189,7 @@
                         email: vm.form.email,
                         phoneNumber: vm.form.phone,
                         status: vm.form.status,
-                        lastLogin: vm.form.lastLogin
+                        lastLogin: vm.form.lastLogin,
                     };
                     axios
                         .post("/admin/edit-user", input)
@@ -279,7 +279,7 @@
                     this.form.status = 'active';
                     this.form.lastLogin = null;
                     this.closeModal();
-                }
+                },
             },
         }).mount('#app')
     </script>
