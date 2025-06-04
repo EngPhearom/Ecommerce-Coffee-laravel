@@ -19,7 +19,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Admin block
+Route::get('/', function () {
+    return redirect('/login');
+});
+
 include "Admin/login.php";
+
 Route::middleware('auth')->group(function () {
     include "Admin/singup.php";
     include "Admin/dashboad.php";

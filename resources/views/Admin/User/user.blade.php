@@ -29,7 +29,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for = "(item, index) in users_list" :key = "users_list.id">
+                                    <tr v-if="users_list.length === 0">
+                                        <td colspan="8" class="text-center">No records found!</td>
+                                    </tr>
+                                    <tr v-for = "(item, index) in users_list" :key="users_list.id">
                                         <td>[[ index + 1 ]]</td>
                                         <td>[[ item.userName ]]</td>
                                         <td>[[ item.password ]]</td>
@@ -107,7 +110,8 @@
                             <button type="button" class="btn btn-danger" @click="resetForm()">Cancel</button>
                             <button v-if = "status == 'add'" @click="addUser()" type="submit" class="btn btn-info">Add
                                 User</button>
-                            <button v-if = "status == 'edit'" @click="editUser()" type="submit" class="btn btn-info">Edit
+                            <button v-if = "status == 'edit'" @click="editUser()" type="submit"
+                                class="btn btn-info">Edit
                                 User</button>
                         </div>
                     </form>

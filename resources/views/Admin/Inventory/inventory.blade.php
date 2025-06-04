@@ -27,6 +27,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr v-if="inventory_list.length === 0">
+                                        <td colspan="8" class="text-center">No records found!</td>
+                                    </tr>
                                     <tr v-for="(item, index) in inventory_list" :key="item.id">
                                         <td>[[ index + 1 ]]</td>
                                         <td>[[ item.product_id ]]</td>
@@ -36,7 +39,8 @@
                                         <td>
                                             <button class="btn btn-sm btn-success" style="margin-right: 10px"
                                                 @click="getEdit(item)">Edit</button>
-                                            <button class="btn btn-sm btn-danger" @click="deleteInventory(item)">Delete</button>
+                                            <button class="btn btn-sm btn-danger"
+                                                @click="deleteInventory(item)">Delete</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -62,7 +66,8 @@
                                 <div class="col-md-6 mb-3" v-if="status == 'add'">
                                     <label for="productid" class="form-label">Product Id </label>
                                     <select class="form-select" id="productid" name="productid" v-model="form.product_id">
-                                        <option :value="item.id" selected v-for="item in product_list" :key="item.id">[[ item.id ]]</option>
+                                        <option :value="item.id" selected v-for="item in product_list"
+                                            :key="item.id">[[ item.id ]]</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-3" v-if="status == 'edit'">
@@ -72,24 +77,29 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="stock" class="form-label">Stock Quantity </label>
-                                    <input type="text" class="form-control" id="stock" name="stock" required v-model="form.stock">
+                                    <input type="text" class="form-control" id="stock" name="stock" required
+                                        v-model="form.stock">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="cost" class="form-label">Cost Price</label>
-                                    <input type="number" class="form-control" id="cost" name="cost" v-model="form.cost">
+                                    <input type="number" class="form-control" id="cost" name="cost"
+                                        v-model="form.cost">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="sell" class="form-label">Selling Price </label>
-                                    <input type="number" class="form-control" id="sell" name="sell" v-model="form.sell">
+                                    <input type="number" class="form-control" id="sell" name="sell"
+                                        v-model="form.sell">
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" @click="resetForm()">Cancel</button>
-                            <button type="submit" class="btn btn-info" v-if="status == 'add'" @click="addInventory()">Add Inventory</button>
-                            <button type="submit" class="btn btn-info" v-if="status == 'edit'" @click="editInventory()">Edit Inventory</button>
+                            <button type="submit" class="btn btn-info" v-if="status == 'add'" @click="addInventory()">Add
+                                Inventory</button>
+                            <button type="submit" class="btn btn-info" v-if="status == 'edit'"
+                                @click="editInventory()">Edit Inventory</button>
                         </div>
                     </form>
                 </div>
@@ -164,7 +174,7 @@
                 closeModal() {
                     $('#adddrop').modal('hide');
                 },
-                addInventory(){
+                addInventory() {
                     const vm = this;
                     const input = {
                         product_id: vm.form.product_id,
@@ -176,7 +186,7 @@
                     axios
                         .post("/admin/add-inventory", input)
                         .then(function(response) {
-                            if(response.status === 200){
+                            if (response.status === 200) {
                                 vm.resetForm();
                                 vm.fetch();
                             }
@@ -187,7 +197,7 @@
                             $.LoadingOverlay("hide");
                         });
                 },
-                deleteInventory(item){
+                deleteInventory(item) {
                     const swalWithBootstrapButtons = Swal.mixin({
                         customClass: {
                             confirmButton: "btn btn-success mx-2",
@@ -197,7 +207,7 @@
                     });
                     swalWithBootstrapButtons.fire({
                         title: "Are you sure?",
-                        text: "You want to deleted user!",
+                        text: "You want to deleted inventory!",
                         icon: "warning",
                         showCancelButton: true,
                         confirmButtonText: "Yes",
@@ -234,7 +244,7 @@
                     this.form.sell = item.sellingPrice;
                     this.showModal();
                 },
-                editInventory(){
+                editInventory() {
                     const vm = this;
                     const input = {
                         id: vm.form.id,
@@ -247,7 +257,7 @@
                     axios
                         .post("/admin/edit-inventory", input)
                         .then(function(response) {
-                            if(response.status === 200){
+                            if (response.status === 200) {
                                 vm.resetForm();
                                 vm.fetch();
                             }

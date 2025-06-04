@@ -22,7 +22,7 @@
             <div>
                 <div class="brand-logo d-flex align-items-center justify-content-between">
                     <a href="{{ route('dashboad') }}" class="text-nowrap logo-img">
-                        <img src="#" alt="" />
+                        <img src="{{ asset('./assets/images/logos/logo.png') }}" style="width: 120px; margin-left: 40px; margin-top: 10px"/>
                     </a>
                     <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                         <i class="ti ti-x fs-6"></i>
@@ -206,7 +206,7 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                     aria-labelledby="drop2">
                                     <div class="message-body">
-                                        <a href="{{ route('singup') }}"
+                                        <a href="{{ route('login') }}"
                                             class="btn btn-outline-danger mx-3 mt-2 d-block">Logout</a>
                                     </div>
                                 </div>

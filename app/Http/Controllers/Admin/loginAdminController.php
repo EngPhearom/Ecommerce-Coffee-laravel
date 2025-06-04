@@ -10,8 +10,8 @@ class loginAdminController extends Controller
 {
     //
     public function index(){
-        // $module = 'login';
-        return view('Admin.Login.login');
+        $module = 'login';
+        return view('Admin.Login.login', ['module' => $module]);
     }
 
     public function doLogin(Request $request){

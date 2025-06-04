@@ -31,6 +31,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr v-if="employee_list.length === 0">
+                                        <td colspan="8" class="text-center">No records found!</td>
+                                    </tr>
                                     <tr v-for="(item, index) in employee_list" :key="item.id">
                                         <td>[[ index + 1 ]]</td>
                                         <td>[[ item.firstName ]]</td>
@@ -254,7 +257,7 @@
                     });
                     swalWithBootstrapButtons.fire({
                         title: "Are you sure?",
-                        text: "You want to deleted customer!",
+                        text: "You want to deleted employee!",
                         icon: "warning",
                         showCancelButton: true,
                         confirmButtonText: "Yes",

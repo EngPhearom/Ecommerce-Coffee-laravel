@@ -28,6 +28,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr v-if="customers_list.length === 0">
+                                        <td colspan="8" class="text-center">No records found!</td>
+                                    </tr>
                                     <tr v-for = "(item, index) in customers_list" :key="item.id">
                                         <td>[[ index + 1 ]]</td>
                                         <td>[[ item.user_id ]]</td>

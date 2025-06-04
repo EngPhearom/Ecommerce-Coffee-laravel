@@ -27,6 +27,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr v-if="product_list.length === 0">
+                                        <td colspan="8" class="text-center">No records found!</td>
+                                    </tr>
                                     <tr v-for="(item, index) in product_list" :key="item.id">
                                         <td>[[ index + 1 ]]</td>
                                         <td>[[ item.productName ]]</td>
@@ -63,28 +66,34 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="productname" class="form-label">Product Name </label>
-                                    <input type="text" class="form-control" id="productname" name="productname" required v-model="form.productName">
+                                    <input type="text" class="form-control" id="productname" name="productname" required
+                                        v-model="form.productName">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="description" class="form-label">Description </label>
-                                    <input type="text" class="form-control" id="description" name="description" required v-model="form.description">
+                                    <input type="text" class="form-control" id="description" name="description" required
+                                        v-model="form.description">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="category" class="form-label">Category </label>
-                                    <input type="text" class="form-control" id="category" name="category" v-model="form.category">
+                                    <input type="text" class="form-control" id="category" name="category"
+                                        v-model="form.category">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="price" class="form-label">Price </label>
-                                    <input type="number" class="form-control" id="price" name="price" v-model="form.price">
+                                    <input type="number" class="form-control" id="price" name="price"
+                                        v-model="form.price">
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" @click="resetForm()">Cancel</button>
-                            <button type="submit" class="btn btn-info" v-if="status == 'add'" @click="addProduct()">Add Product</button>
-                            <button type="submit" class="btn btn-info" v-if="status == 'edit'" @click="editProduct()">Edit Product</button>
+                            <button type="submit" class="btn btn-info" v-if="status == 'add'" @click="addProduct()">Add
+                                Product</button>
+                            <button type="submit" class="btn btn-info" v-if="status == 'edit'" @click="editProduct()">Edit
+                                Product</button>
                         </div>
                     </form>
                 </div>
@@ -174,7 +183,7 @@
                     this.form.price = item.price;
                     this.showModal();
                 },
-                editProduct(){
+                editProduct() {
                     const vm = this;
                     const input = {
                         id: vm.form.id,
@@ -208,7 +217,7 @@
                     });
                     swalWithBootstrapButtons.fire({
                         title: "Are you sure?",
-                        text: "You want to deleted user!",
+                        text: "You want to deleted product!",
                         icon: "warning",
                         showCancelButton: true,
                         confirmButtonText: "Yes",
