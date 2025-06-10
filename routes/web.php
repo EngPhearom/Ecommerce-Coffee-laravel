@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // User block
+
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('User.user');
 // });
 
 // Admin block
@@ -26,6 +27,7 @@ Route::get('/', function () {
 include "Admin/login.php";
 
 Route::middleware('auth')->group(function () {
+    include "Admin/admin.php";
     include "Admin/singup.php";
     include "Admin/dashboad.php";
     include "Admin/user.php";
@@ -33,4 +35,10 @@ Route::middleware('auth')->group(function () {
     include "Admin/employee.php";
     include "Admin/product.php";
     include "Admin/inventory.php";
+
+    // User
+    include "User/user.php";
+    include "User/product.php";
+    include "User/menu.php";
+    include "User/contact.php";
 });

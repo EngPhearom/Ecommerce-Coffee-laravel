@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: rubik;
+    src: url(../fonts/Rubik-Bold.ttf);
+}
+@font-face {
+    font-family: irishgrover;
+    src: url(../fonts/IrishGrover-Regular.ttf);
+}
+.section-herobannner{
+    width: 100%;
+    height: 725px;
+    background-color: aquamarine;
+    position: absolute;
+    background-image: url(../images/hero-banner.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.section-herobannner .blur-bg{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    position: relative;
+}
+.section-herobannner .blur-bg .black-bg{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(255,255,255,0) 20%);
+    position: absolute;
+}
+.section-herobannner .blur-bg .hero-text{
+    width: 500px;
+    padding: 220px 0px 20px 120px;
+}
+.hero-text h1, .hero-text p{
+    color: #fff;
+}
+.hero-text h1{
+    font-family: roboto;
+    font-weight: bolder;
+}
+.herobtn{
+    padding-top: 35px;
+}
+.hero-text .herobtn a{
+    color: #fff;
+    padding: 15px 70px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: roboto;
+    font-weight: bold;
+    background-color: #B77E66;
+    border-radius: 5px;
+}
+.section-navbar{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+}
+.logo a img{
+    width: 130px;
+}
+.menu ul li a{
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 50px;
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transform: 0.5s;
+}
+.section-banner{
+    width: 100%;
+    height: 655px;
+    margin-top: 645px;
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    padding: 220px 120px;
+}
+.text-banner{
+    width: 400px;
+}
+.text-banner h1{
+    color: #471E22;
+    font-family: roboto;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+.text-banner p{
+    color: #533B2F;
+    font-family: roboto;
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+.bannerbtn a{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 50px;
+    background-color: #B77E66;
+    margin-left: 220px;
+    border-radius: 5px;
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: bold;
+}
+.open-time{
+    width: 100%;
+    height: 440px;
+    background-image: url(../images/openitem.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+}
+.text-opentime{
+    padding: 170px 130px;
+}
+.text-opentime h1{
+    color: #fff;
+    padding: 20px 35px;
+    font-size: 64px;
+    font-family: irishgrover;
+    background-color: #221b1884;
+    border-radius: 5px;
+}
+.time{
+    padding-left: 120px;
+    padding-top: 130px;
+}
+.row-time{
+    display: flex;
+    color: #fff;
+    font-family: irishgrover;
+    font-size: 36px;
+}
+.row-time .time1{
+    padding-right: 100px;
+}
+.row-time .time3{
+    padding-right: 104px;
+}
+.our-menu{
+    width: 100%;
+    height: 819px;
+    background-image: url(../images/bgmenu.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.our-menu .container{
+    padding: 100px 0px;
+}
+.our-menu .container h2{
+    text-align: center;
+    color: #903711;
+    text-shadow: 0px 0px 0px #fff;
+    font-size: 50px;
+    font-family: roboto;
+    font-weight: bold;
+}
+.cart-menu{
+    width: 100%;
+    height: 550px;
+    margin-top: 30px;
+}
+.cart-menu > h4{
+    padding-left: 80px;
+    color: #9E5A3D;
+    font-family: roboto;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.cart-menu-auto{
+    width: 100%;
+    height: 444.32px;
+    margin-top: 40px;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.swiper-slide .auto-cart{
+    width: 260px;
+    height: 100%;
+    background: #734a39e6;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 35px;
+}
+.auto-cart .img-auto-cart > img{
+    width: 100%;
+    height: 148px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.auto-cart .text-auto-cart{
+    width: 100%;
+}
+.auto-cart .text-auto-cart > h4{
+    color: #fff;
+    text-decoration: none;
+    padding-top: 10px;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 22px;
+}
+.auto-cart .text-auto-cart > p{
+    font-family: roboto;
+    font-size: 13px;
+    color: #fffada;
+}
+.auto-cart .price-btn-auto-cart{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.auto-cart .price-btn-auto-cart > h3{
+    font-family: rubik;
+    font-size: 20px;
+    color: #fff;
+}
+.price-btn-auto-cart .btn-auto-cart > a{
+    text-decoration: none;
+    color: #fff;
+    font-family: roboto;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 20px;
+    background: #a0583c;
+    border-radius: 8px;
+}
+.bg-customer{
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/bgcustomer.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(1px);
+}
+.bg-customer .blur-bg{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+}
+.discription-customer{
+    width: 100%;
+    padding: 60px 0px;
+}
+.discription-customer > h2{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 70px;
+}
+.discription-customer .row-cart-cutomers{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+.cart-customer{
+    width: 350px;
+    height: 310px;
+    position: relative;
+    background-color: #58311581;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+.cart-customer .pic-customer{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+}
+.pic-customer > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.cart-customer .discription-customer{
+    width: 75%;
+    text-align: center;
+}
+.discription-customer .start-icon-customer{
+    width: 100%;
+    text-align: center;
+    color: yellow;
+    letter-spacing: 5px;
+}
+.discription-customer > h4{
+    color: #fff;
+    font-size: 30px;
+    font-family: roboto;
+    font-weight: bold;
+    line-height: 50px;
+}
+.discription-customer > p{
+    color: #fff;
+    font-size: 16px;
+    font-family: roboto;
+}
+.map{
+    width: 100%;
+    padding: 50px 0px;
+    background: #e3d9d5;
+}
+.map .box-map{
+    width: 100%;
+    border: 10px solid #795341;
+}
+.box-map iframe{
+    width: 100%;
+}
+.footer{
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/image\ 9.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.bg-black-footer{
+    width: 100%;
+    height: 100%;
+    background: #1d1714d3;
+    padding: 110px 0px;
+}
+.row-carts-footer{
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+.row-carts-footer .cart-footer{
+    width: 25%;
+    height: 100%;
+}
+.cart-footer > ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.cart-footer > ul li a .fa-brands{
+    font-size: 30px;
+    letter-spacing: 20px;
+    line-height: 50px;
+}
+.logo-footer{
+    width: 300px;
+    margin-top: 100px;
+}
+.section-bannner-about{
+    width: 100%;
+    height: 725px;
+    background-color: aquamarine;
+    position: absolute;
+    background-image: url(../images/bgabout.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.section-bannner-about .black-bg{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 20%);
+    position: absolute;
+}
+.section-bannner-about .text-banner-about{
+    width: 500px;
+    padding: 300px 0px 20px 120px;
+}
+.section-bannner-about .text-banner-about h1{
+    color: #fff;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+.bg-all-cofe{
+    width: 100%;
+    height: 900px;
+    margin-top: 645px;
+    background-image: url(../images/bgmenu.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.black-bg-cofe{
+    width: 100%;
+    height: 100%;
+    background: #5553539a;
+    backdrop-filter: blur(2px);
+}
+.cart-cofe-menu{
+    width: 100%;
+    padding: 70px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart-cofe-menu > h1{
+    width: 320px;
+    color: #fff;
+    font-family: rubik;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #9e5a3d;
+    margin-bottom: 50px;
+}
+.cart-cofe-menu .carts-menu{
+    width: 100%;
+    height: 650px;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-pagination-bullet {
+    width: 30px !important;
+    height: 30px !important;
+    text-align: center;
+    line-height: 30px;
+    font-family: roboto;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 30px !important;
+    color: #fff !important;
+    background: #1f110a !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #533B2F !important;
+  }
+.row-cart-menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0px 20px;
+}
+.row-cart-menu .cart-menu-cofe{
+    width: 22%;
+    height: 47%;
+    background: #734a39;
+    border-radius: 15px;
+    padding: 15px;
+}
+.cart-menu-cofe .img-cart-menu{
+    width: 100%;
+    height: 150px;
+    background: #000;
+    border-radius: 12px;
+}
+.img-cart-menu > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.img-cart-menu > h4{
+    margin-top: 10px;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 22px;
+    color: #fff;
+}
+.img-cart-menu .price-btn-cart-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
+}
+.price-btn-cart-menu > p{
+    color: #fff;
+    font-family: roboto;
+    font-weight: bolder;
+    font-size: 18px;
+}
+.price-btn-cart-menu > span > a{
+    padding: 10px 14px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    font-size: 23px;
+    color: #000;
+}
+.setcion-bg-menu{
+    width: 100%;
+    height: 1600px;
+    background-image: url(../images/bgpagemenu.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.section-text-menu{
+    width: 100%;
+    height: 100%;
+    padding: 200px 0px;
+}
+.section-text-menu > h1{
+    text-align: center;
+    font-family: rubik;
+    color: #752900;
+    font-size: 50px;
+    letter-spacing: 20px;
+}
+.section-text-menu .texts-page-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    margin-top: 60px;
+}
+.texts-page-menu .text-menu{
+    width: 50%;
+    height: 100px;
+    border-top: 1.5px solid #000;
+}
+.text-menu .menu-coffee > h1{
+    font-family: roboto;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #000;
+}
+.text-menu .text-menu-coffee{
+    width: 100%;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.text-menu-coffee > span{
+    width: 270px;
+    color: #1f0c0cd9;
+}
+.text-menu-coffee > span > h5{
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: bold;
+}
+.text-menu-coffee > span > p{
+    font-family: roboto;
+    font-size: 12px;
+}
+.text-menu-coffee > p{
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f0c0cd9;
+}
+.menu-smoothies{
+    border-top: 1.5px solid #000;
+}
+.menu-food{
+    border-top: 1.5px solid #000;
+}
+.main-contact-us{
+    width: 100%;
+    padding-top: 120px;
+}
+.main-contact-us > h1{
+    text-align: center;
+    font-family: rubik;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ba6e4e;
+}
+.description-input{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 50px 0px;
+}
+.description-input .description{
+    width: 30%;
+    color: #af6343;
+}
+.description > span > h4{
+    font-family: roboto;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding-bottom: 20px;
+}
+.description > span > p{
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: 700;
+}
+.description-input .input-contact{
+    width: 70%;
+}
+.input-contact > div{
+    width: 100%;
+}
+.name > input{
+    width: 100%;
+    padding: 15px 12px;
+    font-family: roboto;
+    font-size: 14px;
+    border: 1px solid #ba6e4e;
+    border-radius: 10px;
+}
+.name, .email, .subject, .message{
+    padding-bottom: 40px;
+}
+.name > input:focus{
+    outline: none;
+}
+.email > input{
+    width: 100%;
+    padding: 15px 12px;
+    font-family: roboto;
+    font-size: 14px;
+    border: 1px solid #ba6e4e;
+    border-radius: 10px;
+}
+.email > input:focus{
+    outline: none;
+}
+.subject > input{
+    width: 100%;
+    padding: 15px 12px;
+    font-family: roboto;
+    font-size: 14px;
+    border: 1px solid #ba6e4e;
+    border-radius: 10px;
+}
+.subject > input:focus{
+    outline: none;
+}
+.message > textarea{
+    padding: 15px 12px;
+    border-radius: 10px;
+    font-family: roboto;
+    font-size: 14px;
+    border: 1px solid #ba6e4e;
+}
+.message > textarea:focus{
+    outline: none;
+}
+.btn-send-email > input{
+    padding: 10px 60px;
+    background-color: initial;
+    border: none;
+    background: #ba6e4e;
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+}

@@ -17,7 +17,7 @@ class loginAdminController extends Controller
     public function doLogin(Request $request){
         $credentials = $request->only('username', 'password');
         if (FacadesAuth::attempt($credentials)) {
-            return redirect('/admin/dashboad');
+            return redirect('/admin');
         } else {
             return redirect('/login')
                 ->with('status', 'Incorrect Username or password !');
